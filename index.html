@@ -10,6 +10,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oxanium:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
+/* Navigation Bar Styling */
+.lss-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5vw;
+  background: #040E15;
+  color: #BAC7D5;
+  font-family: 'Oxanium', sans-serif;
+  text-transform: uppercase;
+  border-bottom: 1px solid #1a2a3a;
+}
+
+.lss-nav-logo { font-weight: 800; letter-spacing: 0.1em; font-size: 1.2rem; }
+
+.lss-nav-links { display: flex; gap: 30px; }
+
+.lss-nav-item { 
+  color: #BAC7D5; 
+  text-decoration: none; 
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.lss-nav-item:hover { color: #00aede; }
+
+/* Mobile Hamburger Menu */
+.hamburger { display: none; font-size: 24px; cursor: pointer; color: #BAC7D5; }
+
+@media (max-width: 900px) {
+  .lss-nav-links { 
+    display: none; 
+    flex-direction: column; 
+    position: absolute; 
+    top: 70px; 
+    left: 0; 
+    width: 100%; 
+    background: #040E15; 
+    padding: 20px; 
+    text-align: center;
+    border-bottom: 2px solid #00aede;
+    z-index: 1000;
+  }
+  .lss-nav-links.active { display: flex; }
+  .hamburger { display: block; }
+}
     * {
       box-sizing: border-box;
     }
@@ -2307,6 +2353,19 @@ inset: 14px 14px 70px 14px;
   </style>
 </head>
 <body>
+<header class="lss-nav-bar">
+  <div class="lss-nav-logo">LSS</div>
+  
+  <div class="hamburger" onclick="document.querySelector('.lss-nav-links').classList.toggle('active')">☰</div>
+  
+  <nav class="lss-nav-links">
+    <a href="/" class="lss-nav-item">Bridge</a>
+    <a href="/vault/" class="lss-nav-item">Vault</a>
+    <a href="/lab/" class="lss-nav-item">Lab</a>
+    <a href="/pulse/" class="lss-nav-item">Pulse</a>
+    <a href="/telemetry/" class="lss-nav-item">Telemetry</a>
+  </nav>
+</header>
 <div id="lss-splash">
   <div class="lss-splash-inner">
 
