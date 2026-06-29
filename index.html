@@ -1,0 +1,3636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oxanium:wght@400;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+/* Navigation Bar Styling */
+.lss-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5vw;
+  background: #040E15;
+  color: #BAC7D5;
+  font-family: 'Oxanium', sans-serif;
+  text-transform: uppercase;
+  border-bottom: 1px solid #1a2a3a;
+}
+
+.lss-nav-logo { font-weight: 800; letter-spacing: 0.1em; font-size: 1.2rem; }
+
+.lss-nav-links { display: flex; gap: 30px; }
+
+.lss-nav-item { 
+  color: #BAC7D5; 
+  text-decoration: none; 
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.lss-nav-item:hover { color: #00aede; }
+
+/* Mobile Hamburger Menu */
+.hamburger { display: none; font-size: 24px; cursor: pointer; color: #BAC7D5; }
+
+@media (max-width: 900px) {
+  .lss-nav-links { 
+    display: none; 
+    flex-direction: column; 
+    position: absolute; 
+    top: 70px; 
+    left: 0; 
+    width: 100%; 
+    background: #040E15; 
+    padding: 20px; 
+    text-align: center;
+    border-bottom: 2px solid #00aede;
+    z-index: 1000;
+  }
+  .lss-nav-links.active { display: flex; }
+  .hamburger { display: block; }
+}
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --site-bg: #040e15;
+      --site-bg-rgb: 4, 14, 21;
+
+      --bg-95: rgba(var(--site-bg-rgb), 0.95);
+      --bg-85: rgba(var(--site-bg-rgb), 0.85);
+      --bg-75: rgba(var(--site-bg-rgb), 0.75);
+      --bg-70: rgba(var(--site-bg-rgb), 0.7);
+      --bg-45: rgba(var(--site-bg-rgb), 0.45);
+      --bg-40: rgba(var(--site-bg-rgb), 0.40);
+      --bg-35: rgba(var(--site-bg-rgb), 0.35);
+      --bg-22: rgba(var(--site-bg-rgb), 0.22);
+      --bg-20: rgba(var(--site-bg-rgb), 0.20);
+      --bg-15: rgba(var(--site-bg-rgb), 0.15);
+      --bg-12: rgba(var(--site-bg-rgb), 0.12);
+      --bg-05: rgba(var(--site-bg-rgb), 0.05);
+      --bg-00: rgba(var(--site-bg-rgb), 0);
+    }
+
+
+    html,
+    body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background: var(--site-bg);
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+.bridge-block {
+  width: 100%;
+  max-width: 1300px;
+  margin: 48px auto 80px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+    .bridge-heading {
+      margin: 0 0 22px;
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      color: var(--site-bg);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .bridge-heading .lead {
+      font-size: 25px;
+    }
+
+    .bridge-heading .rest {
+      font-size: 23px;
+    }
+
+    .bridge-body {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 30.5px;
+      font-weight: 500;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+      text-align: justify;
+      text-justify: inter-word;
+ max-width: 1200px;
+  margin: 0 auto;
+    }
+
+    .bridge-body p {
+      margin: 0 0 18px;
+    }
+
+    .bridge-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bridge-body strong {
+      font-weight: 700;
+      color: #bac7d5;
+    }
+
+    .lss-image-block {
+      width: 100%;
+      max-width: 1450px;
+      margin: 50px auto;
+      text-align: center;
+    }
+.orbit-image-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.orbit-image-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--site-bg) 0%,
+      var(--bg-85) 4%,
+      var(--bg-45) 10%,
+      var(--bg-15) 16%,
+      var(--bg-00) 24%
+    ),
+linear-gradient(
+  to right,
+  var(--site-bg) 0%,
+  var(--bg-85) 4%,
+  var(--bg-70) 10%,
+  var(--bg-45) 17%,
+  var(--bg-15) 24%,
+  var(--bg-00) 30%,
+
+  var(--bg-00) 68%,
+  var(--bg-15) 73%,
+  var(--bg-45) 79%,
+  var(--bg-70) 86%,
+  var(--bg-85) 93%,
+  var(--site-bg) 100%
+),    linear-gradient(
+      to top,
+      var(--site-bg) 0%,
+      var(--bg-85) 4%,
+      var(--bg-45) 10%,
+      var(--bg-15) 16%,
+      var(--bg-00) 24%
+    );
+}
+.orbit-image-frame::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  pointer-events: none;
+  z-index: 3;
+
+  background:
+    linear-gradient(#00aede,#00aede) left top / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) left top / 2px 42px no-repeat,
+
+    linear-gradient(#00aede,#00aede) right top / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) right top / 2px 42px no-repeat,
+
+    linear-gradient(#00aede,#00aede) left bottom / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) left bottom / 2px 42px no-repeat,
+
+    linear-gradient(#00aede,#00aede) right bottom / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) right bottom / 2px 42px no-repeat;
+
+  opacity: .9;
+}
+.footer-logo-block {
+  width: 100%;
+  max-width: 1400px;
+  margin: 80px auto 0;
+  text-align: center;
+}
+
+    .footer-logo-block img {
+      width:100%;
+      height: auto;
+      display: block;
+    }
+
+    .lss-image-block img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* =======================================================
+       SECTION 1: HOME HERO + SIGNUP
+    ======================================================= */
+
+    .home-hero-section {
+      width: 100%;
+      background: var(--site-bg);
+    }
+
+    .hero-featured-label {
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 8;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #bac7d5;
+      backdrop-filter: blur(9px);
+      padding: 6px 14px;
+      border-radius: 8px;
+background: rgba(4,12,21,.55);
+border: 1px solid rgba(4,12,21,.55);
+    }
+
+    .mobile-featured-label {
+      top: 10px;
+      font-size: 12px;
+      padding: 5px 12px;
+      letter-spacing: .16em;
+    }
+
+    .lab-production-label {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 8;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #bac7d5;
+      backdrop-filter: blur(9px);
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(4,12,21,.55);
+border: 1px solid rgba(4,12,21,.55);
+    }
+
+    .lab-production-label.mobile-production-label {
+      top: 10px;
+      font-size: 12px;
+      padding: 5px 12px;
+      letter-spacing: .16em;
+    }
+
+    .home-hero-section .hero-carousel {
+      position: relative;
+      width: 100%;
+      height: min(70vh, 650px);
+      min-height: 460px;
+      background: var(--site-bg);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .home-hero-section .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.9s ease, visibility 0.9s ease;
+      z-index: 1;
+    }
+
+    .bridge-top-heading {
+      margin: 40px auto 24px;
+    }
+
+.section-heading {
+  width: 100%;
+  max-width: 1200px;
+  margin: 35px auto 45px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  font-family: 'Oxanium', sans-serif;
+  font-weight: 700;
+  color: #bac7d5;
+  text-transform: uppercase;
+  line-height: 1;
+
+  text-align: left;
+}
+
+.section-heading::before {
+  content: "";
+ width: 11px;
+height: 38px;
+margin-right: 16px;
+  background: #00AEDE;
+  border-radius: 0;
+  flex-shrink: 0;
+}
+    .section-heading .heading-link {
+      color: inherit;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      transition: opacity .2s ease, transform .15s ease;
+    }
+
+    .section-heading .heading-link:hover {
+      opacity: .85;
+      transform: translateY(-1px);
+    }
+
+    .section-heading .lead {
+      font-size: 25px;
+   }
+
+.section-heading .lead,
+.section-heading .rest {
+  position: relative;
+  top: 3px;
+}
+
+    .section-heading .rest {
+      font-size: 23px;
+    }
+
+
+    .home-hero-section .slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+
+    .home-hero-section .slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transform: scale(1);
+    }
+
+    .home-hero-section .hero-actions {
+      position: absolute;
+      left: 50%;
+      bottom: 3.8rem;
+      transform: translateX(-50%);
+      display: flex;
+      margin-top: 1.8rem;
+      gap: 0.65rem;
+      z-index: 7;
+    }
+
+  .home-hero-section .slide::before {
+  background: linear-gradient(
+    to top,
+    var(--site-bg) 0%,
+    var(--bg-95) 18%,
+    var(--bg-75) 30%,
+    var(--bg-40) 42%,
+    var(--bg-00) 55%
+  );
+}
+
+   .home-hero-section .slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+background:
+  linear-gradient(
+    to bottom,
+    var(--site-bg) 0%,
+    var(--bg-85) 4%,
+    var(--bg-45) 10%,
+    var(--bg-15) 16%,
+    var(--bg-00) 24%
+  ),
+
+  linear-gradient(
+    to right,
+    var(--site-bg) 0%,
+    var(--site-bg) 2%,
+    var(--bg-95) 6%,
+    var(--bg-85) 10%,
+    var(--bg-70) 15%,
+    var(--bg-45) 20%,
+    var(--bg-15) 25%,
+    var(--bg-00) 30%,
+
+    var(--bg-00) 70%,
+
+    var(--bg-15) 75%,
+    var(--bg-45) 80%,
+    var(--bg-70) 85%,
+    var(--bg-85) 90%,
+    var(--bg-95) 95%,
+    var(--site-bg) 100%
+  ),
+
+  linear-gradient(
+    to top,
+    var(--site-bg) 0%,
+    var(--bg-95) 18%,
+    var(--bg-75) 35%,
+    var(--bg-40) 55%,
+    var(--bg-00) 75%
+  );
+}
+    .home-hero-section .hero-content {
+      position: absolute;
+      left: 5;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      min-height: 100%;
+      display: flex;
+      align-items: flex-end;
+       padding: 0 5.5vw 9.5rem;
+      color: #bac7d5;
+    }
+
+    .home-hero-section .content-inner {
+      width: fit-content;
+  max-width: min(760px, 100%);
+}
+
+.home-hero-section .hero-title {
+  margin-top: 6;
+  margin-bottom: 1rem;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(1.65rem, 3.3vw, 2.75rem);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+
+text-shadow:
+  0 0 1px rgba(0,0,0,1),
+  0 0 4px rgba(0,0,0,1),
+  0 0 8px rgba(0,0,0,1),
+  0 0 14px rgba(0,0,0,.95),
+  0 0 24px rgba(0,0,0,.85);
+}
+
+   .home-hero-section .hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.03rem;
+  font-weight: 500;
+  color: #bac7d5;
+  letter-spacing: 0.01em;
+
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.9);
+}
+
+    .home-hero-section .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .home-hero-section .hero-meta span:not(:last-child)::after {
+      content: "";
+      width: 1px;
+      height: 14px;
+      margin-left: 0.85rem;
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .home-hero-section .hero-description {
+      max-width: 62ch;
+      margin-bottom: 1.5rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1.1rem, 1.4vw, 1.2rem);
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.2;
+        color: #bac7d5;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+      letter-spacing: 0.5px;
+    }
+
+    .home-hero-section .hero-button,
+    .home-hero-section .view-all-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0.55rem 1.05rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(6px);
+      color: #bac7d5;
+      text-decoration: none;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        opacity 0.25s ease;
+    }
+
+    .home-hero-section .hero-button:hover,
+    .home-hero-section .view-all-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.28);
+      transform: translateY(-1px);
+    }
+
+    .home-hero-section .view-all-button {
+      position: absolute;
+      top: 1.35rem;
+      right: 1.35rem;
+      z-index: 7;
+      min-height: 44px;
+      padding: 0.82rem 1.2rem;
+      font-size: 0.88rem;
+    }
+
+    .home-hero-section .nav-arrow {
+      position: absolute;
+      top: 44%;
+      transform: translateY(-50%);
+      z-index: 5;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .home-hero-section .nav-arrow:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .home-hero-section .nav-arrow.left {
+      left: 0.5rem;
+    }
+
+    .home-hero-section .nav-arrow.right {
+      right: 0.5rem;
+    }
+
+.home-hero-section .indicators {
+  position: absolute;
+  left: 5.5vw;
+  top: 6px;
+  bottom: auto;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  transform: none;
+}
+
+  .home-hero-section .indicator {
+  width: 30px;
+  height: 4px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.26);
+  box-shadow: none;
+  opacity: 1;
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    opacity 0.12s ease;
+}
+    .home-hero-section .indicator:hover {
+      background: rgba(255, 255, 255, 0.55);
+      transform: scaleX(1.05);
+    }
+
+.home-hero-section .indicator.active {
+  background: linear-gradient(
+    to right,
+    #0096c2,
+    #7beaff,
+    #0096c2
+  );
+
+  box-shadow:
+    0 0 8px rgba(0,174,222,.25),
+    0 0 16px rgba(0,174,222,.15);
+}
+
+    .home-hero-section .mobile-hero-carousel {
+      display: none;
+      position: relative;
+      width: 100%;
+      background: var(--site-bg);
+      overflow: hidden;
+    }
+
+    .home-hero-section .mobile-hero-track {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 1.08;
+      overflow: hidden;
+      background: var(--site-bg);
+    }
+
+    .home-hero-section .mobile-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+      z-index: 1;
+    }
+
+    .home-hero-section .mobile-slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }
+
+    .home-hero-section .mobile-slide a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+
+    .home-hero-section .mobile-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .home-hero-section .mobile-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          to top,
+          var(--bg-20) 0%,
+          var(--bg-05) 25%,
+          var(--bg-00) 55%
+        ),
+        linear-gradient(
+          to right,
+          var(--bg-12) 0%,
+          var(--bg-00) 15%,
+          var(--bg-00) 85%,
+          var(--bg-12) 100%
+        );
+    }
+
+.home-hero-section .mobile-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  border: none;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 0;
+  opacity: 1;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+    .home-hero-section .mobile-nav-arrow:hover {
+      opacity: 1;
+      transform: translateY(-50%) scale(1.05);
+      background: rgba(3, 0, 30, 0.34);
+    }
+
+    .home-hero-section .mobile-nav-arrow.left {
+      left: 1rem;
+    }
+
+    .home-hero-section .mobile-nav-arrow.right {
+      right: 1rem;
+    }
+
+.home-signup-wrap {
+  width: 100%;
+  background: var(--site-bg);
+  padding-top: 6px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+    .home-signup-wrap .lss-embed {
+      display: block;
+      width: 100%;
+      text-align: center;
+      transform-origin: top center;
+      margin-top: 6px;
+      margin-bottom: 4px;
+    }
+
+    .home-signup-wrap .lss-form {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+      font-size: 130%;
+      font-family: 'Oxanium', sans-serif;
+      font-weight: 700;
+      color: #d9d9d9;
+      box-sizing: border-box;
+    }
+
+    .home-signup-wrap .lss-label {
+      margin: 0;
+      padding: 0;
+      color: #00aede;
+    }
+
+    .home-signup-wrap .lss-input {
+      font-family: 'Oxanium', sans-serif;
+      font-size: 0.8em;
+      font-weight: 300;
+      color: #d9d9d9;
+      border: 2px solid #d9d9d9;
+      border-radius: 8px;
+      padding: 4px 12px;
+      height: 30px;
+      width: 215px;
+      box-sizing: border-box;
+      text-align: center;
+      background: transparent;
+    }
+
+    .home-signup-wrap .lss-input::placeholder {
+      color: #9aa1b3;
+    }
+
+    .home-signup-wrap .lss-button {
+      background: #00aede;
+      color: #020015;
+      border: none;
+      border-radius: 8px;
+      padding: 4px 10px;
+      height: 30px;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 0.9em;
+      font-weight: 300;
+      cursor: pointer;
+      transition: background .25s ease, box-shadow .25s ease;
+      width: auto;
+    }
+
+    .home-signup-wrap .lss-button:hover {
+      background: #0095c2;
+    }
+
+    .home-signup-wrap .lss-disclaimer {
+      margin: -6px 0 0;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.31rem;
+      font-weight: 500;
+      color: #bdbdbd;
+      line-height: 1.4;
+      white-space: normal;
+    }
+    /* =======================================================
+       SECTION 2: VAULT
+    ======================================================= */
+
+    .vault-combined-section {
+      width: 100%;
+      background: var(--site-bg);
+      padding: 6px 0 12px;
+      font-family: 'Oxanium', sans-serif;
+    }
+.vault-combined-section .vault-divider .mark img {
+  width: 18px;
+  height: auto;
+  display: block;
+  opacity: .8;
+}
+.vault-combined-section .vault-divider {
+  opacity: .9;
+}
+
+.vault-combined-section .vault-divider span:not(.mark) {
+  background: rgba(255,255,255,.75);
+}
+    .vault-combined-section .carousel-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 1400px;
+      margin: auto;
+      opacity: 0;
+      transform: scale(.97);
+      animation: vaultFadeZoomIn 1.4s ease-out forwards;
+    }
+@media (max-width: 900px) {
+  .vault-combined-section .carousel-wrapper {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+.vault-combined-section .vault-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 65%;
+  opacity: .7;
+}
+
+.vault-combined-section .vault-divider span:not(.mark) {
+  height: 2px;
+  flex: 2;
+  background: rgba(255,255,255,.5);
+}
+
+.vault-combined-section .vault-divider .mark {
+  font-size: 13px;
+  letter-spacing: .16em;
+  color: rgba(255,255,255,.75);
+}
+.vault-combined-section .vault-rail-dashes {
+  position: absolute;
+  top: -28px;
+  right: 85px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  z-index: 25;
+}
+
+.vault-combined-section .vault-rail-dash {
+  width: 28px;
+  height: 4px;
+  border: none;
+  border-radius: 999px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.26);
+  cursor: pointer;
+  transition: background .25s ease, transform .2s ease, box-shadow .25s ease;
+}
+
+.vault-combined-section .vault-rail-dash.active {
+  background: #00aede;
+  box-shadow: 0 0 10px rgba(0, 174, 222, 0.45);
+}
+
+.vault-combined-section .vault-rail-dash:hover {
+  transform: scaleX(1.08);
+}
+.vault-combined-section .vault-item {
+  position: relative;
+  border-radius: 0px;
+  overflow: hidden;
+}
+
+/* outline layer */
+.vault-combined-section .vault-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0px;
+clip-path: inset(0 round 0px);
+  pointer-events: none;
+  z-index: 6;
+  padding: 2px;
+filter: blur(.25px);
+background:
+  linear-gradient(
+    to right,
+    rgba(0,174,222,0) 0%,
+    rgba(0,174,222,0.22) 8%,
+    rgba(0,174,222,0.55) 20%,
+    rgba(0,174,222,0.55) 80%,
+    rgba(0,174,222,0.22) 92%,
+    rgba(0,174,222,0) 100%
+  ),
+  linear-gradient(
+    to bottom,
+    rgba(0,174,222,0) 0%,
+    rgba(0,174,222,0.18) 10%,
+    rgba(0,174,222,0.35) 22%,
+    rgba(0,174,222,0.35) 78%,
+    rgba(0,174,222,0.18) 90%,
+    rgba(0,174,222,0) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity .35s ease, filter .35s ease;
+}
+
+/* hover state */
+.vault-combined-section .vault-item:hover::after {
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.35))
+          drop-shadow(0 0 24px rgba(0,174,222,.25));
+}
+.vault-combined-section .vault-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(15,57,69,.65) 0%,
+    rgba(7,43,52,.38) 45%,
+    rgba(0,4,9,0) 78%
+  );
+  transform: translateZ(0);
+  will-change: opacity;
+  transition: opacity .25s ease;
+}
+
+.vault-combined-section .vault-item:hover::before {
+  opacity: 1;
+}
+    .vault-combined-section .container {
+      width: 100%;
+      max-width: 1300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vault-combined-section .cards-wrapper {
+      width: 1150px;
+      height: 500px;
+      perspective: 2400px;
+      position: relative;
+      overflow: visible;
+    }
+
+    .vault-combined-section .cards__container {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .vault-combined-section .swipe-hint {
+      display: none;
+    }
+
+    .vault-combined-section #desktop-list {
+      display: block;
+    }
+
+    .vault-combined-section #mobile-list {
+      display: none;
+    }
+
+    .vault-combined-section .box {
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      width: 310px;
+      height: 465px;
+      border-radius: 0px;
+      overflow: hidden;
+      margin-left: -155px;
+      transition: transform .6s ease, filter .6s ease;
+    }
+
+    .vault-combined-section .box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .vault-combined-section .hoverfx {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .vault-combined-section .box .hoverfx {
+      pointer-events: none;
+    }
+
+    .vault-combined-section .box.active .hoverfx {
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    .vault-combined-section #desktop-list .box:nth-child(1) { transform: translateX(-520px) scale(1) rotateY(15deg); filter: brightness(.7); z-index: 1; }
+    .vault-combined-section #desktop-list .box:nth-child(2) { transform: translateX(-310px) scale(1) rotateY(9deg); filter: brightness(.85); z-index: 2; }
+    .vault-combined-section #desktop-list .box:nth-child(3) { transform: translateX(-110px) scale(1) rotateY(4deg); filter: brightness(.95); z-index: 3; }
+    .vault-combined-section #desktop-list .box:nth-child(4) { transform: translateX(110px) scale(1); filter: brightness(1); z-index: 4; }
+    .vault-combined-section #desktop-list .box:nth-child(5) { transform: translateX(310px) scale(1) rotateY(-4deg); filter: brightness(.95); z-index: 3; }
+    .vault-combined-section #desktop-list .box:nth-child(6) { transform: translateX(520px) scale(1) rotateY(-15deg); filter: brightness(.7); z-index: 1; }
+
+    .vault-combined-section .hoverfx img {
+      filter: brightness(1) grayscale(0) blur(0px);
+      transition: filter 1.4s ease, transform .55s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .vault-combined-section .info-box {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity .4s ease;
+      z-index: 3;
+    }
+
+    .vault-combined-section .text-bg {
+      background: rgba(0,0,0,.55);
+      padding: 10px 22px;
+      border-radius: 0px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.4);
+        0 2px 6px rgba(0,0,0,.9),
+  0 4px 18px rgba(0,0,0,.8),
+  0 0 35px rgba(0,0,0,.7);
+      font-size: 17px;
+      letter-spacing: .5px;
+      font-weight: 600;
+    }
+
+    .vault-combined-section .box.active .hoverfx:hover .info-box {
+      opacity: 1;
+    }
+
+    .vault-combined-section .controls {
+      width: 100%;
+      max-width: 1150px;
+      margin: 20px auto 0;
+      position: relative;
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: vaultControlsDrop 1s ease-out forwards;
+      animation-delay: .8s;
+    }
+
+    .vault-combined-section .dots-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      filter: drop-shadow(0 .3px 5px rgba(0,0,0,.3));
+    }
+
+    .vault-combined-section .nav-btn {
+      font-size: 22px;
+      cursor: pointer;
+      color: #888;
+      background: transparent;
+      padding: 4px 8px;
+      border-radius: 4px;
+      opacity: .9;
+      transition: opacity .2s, transform .15s;
+    }
+
+    .vault-combined-section .nav-btn:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .vault-combined-section .dots {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .vault-combined-section .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #a5a6a6;
+      transition: background .25s, transform .2s;
+      cursor: pointer;
+    }
+
+    .vault-combined-section .dot.active {
+      background: #073763;
+      transform: scale(1.3);
+    }
+
+    .vault-combined-section.mobile-mode #desktop-list {
+      display: none;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list {
+      display: block;
+    }
+
+    .vault-combined-section.mobile-mode .controls {
+      display: none;
+    }
+
+    .vault-combined-section.mobile-mode .swipe-hint {
+      display: block;
+      position: absolute;
+      top: 6px;
+      width: 22px;
+      height: 22px;
+      z-index: 12;
+      opacity: .9;
+      cursor: pointer;
+    }
+
+    .vault-combined-section.mobile-mode .swipe-hint.left {
+      left: 10px;
+    }
+
+    .vault-combined-section.mobile-mode .swipe-hint.right {
+      right: 10px;
+    }
+
+    .vault-combined-section.mobile-mode .swipe-hint svg {
+      width: 100%;
+      height: 100%;
+      stroke: #00AEDE;
+      stroke-width: 2;
+      fill: none;
+      border-radius: 4px;
+    }
+
+    .vault-combined-section.mobile-mode {
+      --cardW: 280px;
+      --cardH: calc(var(--cardW) * 0.5451);
+      --tx2: calc(var(--cardW) * 0.80);
+    }
+
+    .vault-combined-section.mobile-mode .cards-wrapper {
+      width: 100%;
+      height: 260px;
+      perspective: 900px;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      height: 100%;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list .box {
+      position: absolute;
+      top: calc(50% - var(--cardH)/2);
+      left: calc(50% - var(--cardW)/2);
+      width: var(--cardW);
+      height: var(--cardH);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--site-bg);
+      transition: transform .45s ease, filter .35s ease;
+      margin-left: 0;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list .box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list .box:nth-child(1) {
+      transform: translateX(0) scale(1.02);
+      filter: brightness(1);
+      z-index: 3;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list .box:nth-child(2) {
+      transform: translateX(var(--tx2)) scale(.94) rotateY(-8deg);
+      filter: brightness(.75);
+      z-index: 2;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list .box:nth-child(3) {
+      transform: translateX(calc(-1 * var(--tx2))) scale(.94) rotateY(8deg);
+      filter: brightness(.75);
+      z-index: 2;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list .box:nth-child(n+4) {
+      display: none;
+    }
+
+    .vault-combined-section.mobile-mode .info-box {
+      display: none !important;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list .box .hoverfx {
+      pointer-events: none;
+    }
+
+    .vault-combined-section.mobile-mode #mobile-list .box.active .hoverfx {
+      pointer-events: auto;
+    }
+
+.vault-combined-section .vault-rail-wrapper {
+  width: 100%;
+  max-width: 1450px;
+  margin: 1px auto 50px;
+  position: relative;
+  padding: 0 100px;
+  font-family: 'Oxanium', sans-serif;
+}
+
+.vault-combined-section .vault-rail-track {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vault-combined-section .vault-rail-track::-webkit-scrollbar {
+  display: none;
+}
+
+.vault-combined-section .vault-rail-wrapper::before,
+.vault-combined-section .vault-rail-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 211px;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.vault-combined-section .vault-rail-wrapper::before {
+  left: 30px;
+  background: linear-gradient(
+    to right,
+    var(--site-bg) 0%,
+    var(--bg-85) 45%,
+    var(--bg-00) 100%
+  );
+}
+
+.vault-combined-section .vault-rail-wrapper::after {
+  right: 30px;
+  background: linear-gradient(
+    to left,
+    var(--site-bg) 0%,
+    var(--bg-85) 45%,
+    var(--bg-00) 100%
+  );
+}
+
+.vault-combined-section .vault-rail-track::-webkit-scrollbar {
+  display: none;
+}
+
+
+.vault-combined-section .vault-rail-wrapper::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--site-bg) 0%,
+    var(--bg-85) 55%,
+    var(--bg-00) 100%
+  );
+}
+.vault-combined-section .vault-rail-wrapper::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--site-bg) 0%,
+    var(--bg-85) 45%,
+    var(--bg-00) 100%
+  );
+}
+
+    .vault-combined-section .vault-rail-track::-webkit-scrollbar {
+      display: none;
+    }
+
+.vault-combined-section .vault-item {
+  flex: 0 0 calc((100% - 36px) / 4);
+  margin-right: 12px;
+  position: relative;
+  aspect-ratio: 2 / 1;
+  border-radius: 0px;
+  overflow: hidden;
+  cursor: pointer;
+transform: translateZ(0);
+backface-visibility: hidden;
+contain: paint;
+  transition: transform .35s ease;
+}
+
+.vault-combined-section .vault-item > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+  transform-origin: center center;
+
+  backface-visibility: hidden;
+  will-change: opacity, filter, transform;
+
+  filter: blur(0px);
+
+  transition:
+    opacity .8s ease,
+    filter .85s ease,
+    transform .9s ease;
+}
+.vault-combined-section .vault-item:hover > img {
+  transform: translateZ(0) scale(1.015);
+  opacity: 0;
+  filter: brightness(0.25) grayscale(85%) blur(18px);
+
+  transition:
+    opacity .5s ease,
+    filter .55s ease,
+    transform .7s ease;
+}
+
+ .vault-combined-section .vault-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  opacity: 0;
+  transition: opacity .4s ease;
+  text-align: center;
+  color: white;
+  z-index: 4;
+  padding: 0 18px;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,.58) 0%,
+    rgba(0,0,0,.42) 42%,
+    rgba(0,0,0,.16) 100%
+  );
+}
+
+    .vault-combined-section .vault-item:hover .vault-info {
+      opacity: 1;
+    }
+.vault-combined-section .vault-tagline {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: .04em;
+  text-transform: none;
+  text-shadow: 0 2px 12px rgba(0,0,0,.95);
+}
+
+.vault-combined-section .vault-runtime {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.88);
+  text-shadow: 0 2px 10px rgba(0,0,0,.95);
+}
+
+    .vault-combined-section .vault-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 70px;
+      height: 140px;
+      cursor: pointer;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .25s ease;
+      user-select: none;
+    }
+
+    .vault-combined-section .vault-arrow:hover {
+      transform: translateY(-50%) scale(1.06);
+    }
+
+    .vault-combined-section .vault-arrow-left {
+      left: 25px;
+    }
+
+    .vault-combined-section .vault-arrow-right {
+      right: 25px;
+    }
+
+    .vault-combined-section .vault-arrow::before {
+      content: "";
+      width: 26px;
+      height: 26px;
+      border-top: 3px solid #00aede;
+      border-right: 3px solid #00aede;
+      display: block;
+      transition: border-color .25s ease;
+    }
+
+    .vault-combined-section .vault-arrow-left::before {
+      transform: rotate(-135deg);
+    }
+
+    .vault-combined-section .vault-arrow-right::before {
+      transform: rotate(45deg);
+    }
+
+    .vault-combined-section .vault-arrow:hover::before {
+      border-color: #0286B9;
+    }
+
+    /* =======================================================
+       SECTION 3: F1 HERO
+    ======================================================= */
+
+    .lab-hero-section {
+      width: 100%;
+      background: var(--site-bg);
+      padding-top: 10px;
+    }
+
+    .lab-hero-section .hero-single {
+      position: relative;
+      width: 100%;
+      height: min(70vh, 650px);
+      min-height: 460px;
+      background: var(--site-bg);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .lab-hero-section .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .lab-hero-section .hero-single::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to top,
+        var(--site-bg) 0%,
+        var(--bg-85) 10%,
+        var(--bg-45) 18%,
+        var(--bg-15) 26%,
+        var(--bg-00) 35%
+      );
+    }
+
+    .lab-hero-section .hero-single::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      var(--site-bg) 0%,
+      var(--bg-85) 4%,
+      var(--bg-45) 10%,
+      var(--bg-15) 16%,
+      var(--bg-00) 24%
+    ),
+  linear-gradient(
+  to right,
+  var(--site-bg) 0%,
+  var(--site-bg) 2%,
+  var(--bg-95) 6%,
+  var(--bg-85) 10%,
+  var(--bg-70) 15%,
+  var(--bg-45) 20%,
+  var(--bg-15) 25%,
+  var(--bg-00) 30%,
+
+  var(--bg-00) 70%,
+
+  var(--bg-15) 75%,
+  var(--bg-45) 80%,
+  var(--bg-70) 85%,
+  var(--bg-85) 90%,
+  var(--bg-95) 95%,
+  var(--site-bg) 100%
+),
+   linear-gradient(
+  to top,
+  var(--site-bg) 0%,
+  var(--bg-85) 4%,
+  var(--bg-45) 10%,
+  var(--bg-15) 16%,
+  var(--bg-00) 24%
+);
+}
+
+    .lab-hero-section .hero-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+      min-height: 100%;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 5.5vw 12.5rem;
+      color: #bac7d5;
+    }
+
+
+.lab-hero-section .hero-button.browse {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+}
+    .lab-hero-section .content-inner {
+      width: min(760px, 100%);
+    }
+
+.lab-hero-section .hero-title {
+    margin-top: 6;
+  margin-bottom: 1rem;
+  font-family: 'Oxanium', sans-serif;
+  font-size: clamp(1.65rem, 3.3vw, 2.75rem);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+ text-shadow:
+  0 0 1px rgba(0,0,0,1),
+  0 0 4px rgba(0,0,0,1),
+  0 0 8px rgba(0,0,0,1),
+  0 0 14px rgba(0,0,0,.95),
+  0 0 24px rgba(0,0,0,.85);
+}
+    .lab-hero-section .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.03rem;
+      font-weight: 500;
+       color: #bac7d5;
+      letter-spacing: 0.01em;
+    }
+
+    .lab-hero-section .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .lab-hero-section .hero-meta span:not(:last-child)::after {
+      content: "";
+      width: 1px;
+      height: 14px;
+      margin-left: 0.85rem;
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .lab-hero-section .hero-description {
+      max-width: 62ch;
+      margin-bottom: 1.5rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(1.08rem, 1.35vw, 1.08rem);
+      line-height: 1.62;
+font-style: italic;
+     color: #bac7d5;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+    }
+
+    .lab-hero-section .hero-actions {
+      position: absolute;
+      left: 50%;
+      bottom: 3.8rem;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.65rem;
+      z-index: 7;
+    }
+
+    .lab-hero-section .hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0.55rem 1.05rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(6px);
+      color: #bac7d5;
+      text-decoration: none;
+      font-family: 'Oxanium', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.25s ease,
+                  border-color 0.25s ease,
+                  transform 0.25s ease,
+                  opacity 0.25s ease;
+    }
+
+    .lab-hero-section .hero-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.28);
+      transform: translateY(-1px);
+    }
+
+    .lab-hero-section .mobile-hero-single {
+      display: none;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 1.08;
+      background: var(--site-bg);
+      overflow: hidden;
+    }
+
+    .lab-hero-section .mobile-hero-single a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .lab-hero-section .mobile-hero-single img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lab-hero-section .mobile-hero-single::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          to top,
+          var(--bg-20) 0%,
+          var(--bg-05) 25%,
+          var(--bg-00) 55%
+        ),
+        linear-gradient(
+          to right,
+          var(--bg-12) 0%,
+          var(--bg-00) 15%,
+          var(--bg-00) 85%,
+          var(--bg-12) 100%
+        );
+    }
+
+    /* =======================================================
+       ANIMATIONS
+    ======================================================= */
+
+    @keyframes vaultFadeZoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes vaultControlsDrop {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =======================================================
+       RESPONSIVE
+    ======================================================= */
+
+    @media (max-width: 900px) {
+      .home-hero-section .hero-carousel {
+        height: 76vh;
+        min-height: 520px;
+      }
+
+      .home-hero-section .hero-content {
+        padding: 0 1.35rem 5rem;
+      }
+
+      .home-hero-section .content-inner {
+        max-width: 100%;
+      }
+
+      .home-hero-section .nav-arrow {
+        font-size: 2.4rem;
+      }
+
+      .home-hero-section .nav-arrow.left {
+        left: 0.65rem;
+      }
+
+      .home-hero-section .nav-arrow.right {
+        right: 0.65rem;
+      }
+
+      .vault-combined-section .vault-rail-wrapper {
+        display: none;
+      }
+
+      .lab-hero-section .hero-single {
+        height: 76vh;
+        min-height: 520px;
+      }
+
+      .lab-hero-section .hero-content {
+        padding: 0 1.35rem 5rem;
+      }
+
+      .lab-hero-section .content-inner {
+        max-width: 100%;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .vault-combined-section .carousel-wrapper {
+        display: none;
+      }
+
+      .home-signup-wrap .lss-embed {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .home-hero-section .hero-carousel {
+        display: none;
+      }
+
+      .home-hero-section .mobile-hero-carousel {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .section-heading {
+        margin: 0 auto 10px;
+      }
+
+      .vault-combined-section {
+        padding: 0 0 2px;
+      }
+
+      .vault-combined-section .carousel-wrapper {
+        margin-bottom: 0;
+      }
+
+      .vault-combined-section.mobile-mode .cards-wrapper {
+        height: 236px;
+      }
+
+      .lab-hero-section {
+        padding-top: 0;
+      }
+
+      .home-hero-section .hero-title {
+        font-size: clamp(2.1rem, 9vw, 3.25rem);
+      }
+
+      .home-hero-section .hero-meta {
+        gap: 0.7rem;
+        font-size: 0.9rem;
+      }
+
+      .home-hero-section .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.55;
+      }
+
+      .home-hero-section .hero-button,
+      .home-hero-section .view-all-button {
+        min-height: 42px;
+        padding: 0.8rem 1.15rem;
+        font-size: 0.86rem;
+      }
+
+      .home-hero-section .view-all-button {
+        top: 0.9rem;
+        right: 0.9rem;
+        min-height: 40px;
+        padding: 0.72rem 1rem;
+        font-size: 0.82rem;
+      }
+
+      .home-hero-section .nav-arrow {
+        font-size: 2rem;
+      }
+
+      .home-hero-section .indicator {
+        width: 24px;
+      }
+
+      .home-hero-section .mobile-nav-arrow svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .lab-hero-section .hero-single {
+        display: none;
+      }
+
+      .lab-hero-section .mobile-hero-single {
+        display: block;
+      }
+
+      .bridge-block,
+      .bridge-body,
+      .lss-image-block {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .home-signup-wrap .lss-embed {
+        transform: scale(0.95);
+      }
+
+      .home-signup-wrap .lss-disclaimer {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .home-signup-wrap .lss-embed {
+        transform: scale(0.9);
+      }
+
+      .home-signup-wrap .lss-input {
+        width: 190px;
+      }
+
+      .home-signup-wrap .lss-disclaimer {
+        font-size: 1.05rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .vault-combined-section .controls {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+@media (min-width: 901px) {
+  .section-heading {
+    margin: 35px auto 45px;
+  }
+}
+@media (min-width: 901px) {
+  .section-heading .lead {
+    font-size: 38px;
+  }
+
+  .section-heading .rest {
+    font-size: 35px;
+  }
+}
+@media (min-width: 901px) {
+  .home-signup-wrap {
+    padding-top: 32px;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .orbit-desktop-only {
+    display: none;
+  }
+}
+@media (min-width: 901px) {
+  .footer-logo-block {
+    margin-top: 80px;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 900px) {
+  .vault-combined-section .controls {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .vault-combined-section #desktop-list {
+    display: none;
+  }
+
+  .vault-combined-section #mobile-list {
+    display: block;
+  }
+
+  .vault-combined-section .cards-wrapper {
+    width: 100%;
+    height: 236px;
+    perspective: 900px;
+  }
+
+  .vault-combined-section .controls {
+    display: none !important;
+  }
+}
+.vault-combined-section .vault-info {
+  gap: 6px;
+}
+
+.vault-combined-section .vault-tagline {
+  max-width: 85%;
+}
+
+.vault-combined-section .vault-runtime {
+  margin-top: 4px;
+}
+
+
+/* =======================================================
+   LSS IMPLEMENTED UPGRADES: HERO REVEAL + VAULT METADATA
+======================================================= */
+@media (min-width: 901px) {
+  .home-hero-section .hero-content-wrapper {
+    position: relative;
+    padding-left: 25px;
+  }
+
+  .home-hero-section .hero-accent-bar {
+    position: absolute;
+    left: 0;
+    top: 20;
+    width: 7px;
+    height: 52px;
+background: linear-gradient(
+  to bottom,
+  #0096c2 0%,
+  #00aede 20%,
+  #7beaff 50%,
+  #00aede 80%,
+  #0096c2 100%
+);
+    box-shadow:
+  0 0 8px rgba(0,174,222,.6),
+  0 0 18px rgba(0,174,222,.45),
+  0 0 30px rgba(0,174,222,.25);
+    transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
+  }
+
+  .home-hero-section .content-inner:hover .hero-accent-bar {
+    height: 100%;
+  }
+
+  .home-hero-section .hero-title-link {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .home-hero-section .hero-title-link:hover .hero-title {
+    opacity: 0.9;
+  }
+
+.home-hero-section .hero-content-wrapper .hero-meta,
+.home-hero-section .hero-content-wrapper .hero-description,
+.home-hero-section .hero-content-wrapper .hero-actions {
+  opacity: 0;
+  transform: translateY(-22px);
+  transition:
+    opacity .4s cubic-bezier(0.25,0.46,0.45,0.94),
+    transform .4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.home-hero-section .hero-content-wrapper:hover .hero-meta,
+.home-hero-section .hero-content-wrapper:hover .hero-description,
+.home-hero-section .hero-content-wrapper:hover .hero-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  .home-hero-section .hero-content-wrapper:hover .hero-description {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+
+  .home-hero-section .hero-content-wrapper:hover .hero-actions {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+  }
+
+  .home-hero-section .content-inner .hero-actions {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 1.3rem;
+    display: flex;
+    gap: 0.65rem;
+    z-index: 7;
+  }
+
+  .home-hero-section .hero-button.details {
+    background: #00aede;
+    border-color: #00aede;
+    color: var(--site-bg);
+  }
+
+  .home-hero-section .hero-button.details:hover {
+    background: #00c6f2;
+    border-color: #00c6f2;
+    color: var(--site-bg);
+  }
+
+  .home-hero-section .hero-button.browse {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+  }
+}
+.lab-kicker {
+  display: block;
+  margin: 0 0 1px 0;
+
+  font-family: 'Oxanium', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #00AEDE;
+
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.85),
+    0 0 10px rgba(0,174,222,.18);
+}
+/* =======================================================
+   HERO FRAME UPGRADE v3
+======================================================= */
+
+@media (min-width: 901px) {
+
+  .home-hero-section .hero-carousel {
+    position: relative;
+    overflow: visible;
+  }
+
+@media (min-width: 901px) {
+
+.home-hero-section .indicators {
+  position: absolute;
+  left: 50%;
+  top: auto;
+  bottom: 82px;
+  transform: translateX(-50%);
+  gap: 0.65rem;
+  z-index: 20;
+}
+
+  .home-hero-section .nav-arrow {
+    width: 58px;
+    height: 58px;
+    border-radius: 10px;
+    background: rgba(4,12,21,.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,.28);
+    opacity: 1;
+  }
+
+  .home-hero-section .nav-arrow svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .home-hero-section .nav-arrow.left {
+    left: 10px;
+  }
+
+  .home-hero-section .nav-arrow.right {
+    right: 10px;
+  }
+
+.home-hero-section .nav-arrow:hover {
+  background: rgba(123,234,255,.08);
+  border-color: #7beaff;
+
+  box-shadow:
+    0 0 10px rgba(123,234,255,.12),
+    0 0 20px rgba(123,234,255,.06);
+}
+  .home-hero-section .hero-title {
+    font-size: clamp(2.1rem, 3vw, 3.3rem);
+    line-height: .95;
+  }
+
+.hero-kicker {
+  display: block;
+  margin: 0 0 1px 0;
+
+  font-family: 'Oxanium', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #00AEDE;
+
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.85),
+    0 0 10px rgba(0,174,222,.30),
+    0 0 20px rgba(0,174,222,.15);
+}
+  .home-hero-section .hero-content {
+    padding: 0 8vw 9rem;
+  }
+
+  .home-hero-section .hero-accent-bar {
+    width: 6px;
+    height: 54px;
+  }
+
+  .home-hero-section .content-inner:hover .hero-accent-bar {
+    height: 190px;
+  }
+
+  .home-hero-section .hero-carousel::before,
+  .home-hero-section .hero-carousel::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 15;
+  }
+
+.home-hero-section .hero-carousel::before {
+  content: "";
+  position: absolute;
+inset: 14px 14px 70px 14px;
+  pointer-events: none;
+  z-index: 30;
+
+  background:
+    linear-gradient(#00aede,#00aede) left top / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) left top / 2px 42px no-repeat,
+
+    linear-gradient(#00aede,#00aede) right top / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) right top / 2px 42px no-repeat,
+
+    linear-gradient(#00aede,#00aede) left bottom / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) left bottom / 2px 42px no-repeat,
+
+    linear-gradient(#00aede,#00aede) right bottom / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) right bottom / 2px 42px no-repeat;
+
+  opacity: .9;
+}
+
+.home-hero-section .hero-carousel::after,
+.home-hero-section .slide.active::before,
+.home-hero-section .slide.active .slide-bg::before {
+  content: none !important;
+}
+.lab-hero-section .hero-single-frame {
+  position: absolute;
+  inset: 14px 14px 90px 14px;
+  pointer-events: none;
+  z-index: 30;
+
+  background:
+    linear-gradient(#00aede,#00aede) left top / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) left top / 2px 42px no-repeat,
+
+    linear-gradient(#00aede,#00aede) right top / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) right top / 2px 42px no-repeat,
+
+    linear-gradient(#00aede,#00aede) left bottom / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) left bottom / 2px 42px no-repeat,
+
+    linear-gradient(#00aede,#00aede) right bottom / 42px 2px no-repeat,
+    linear-gradient(#00aede,#00aede) right bottom / 2px 42px no-repeat;
+
+  opacity: .9;
+}
+.lab-hero-section .hero-content-wrapper {
+  position: relative;
+  padding-left: 25px;
+}
+
+.lab-hero-section .hero-accent-bar {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 7px;
+  height: 52px;
+
+  background: linear-gradient(
+    to bottom,
+    #0096c2 0%,
+    #00aede 20%,
+    #7beaff 50%,
+    #00aede 80%,
+    #0096c2 100%
+  );
+
+  box-shadow:
+    0 0 8px rgba(0,174,222,.6),
+    0 0 18px rgba(0,174,222,.45),
+    0 0 30px rgba(0,174,222,.25);
+
+  transition: height .4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.lab-hero-section .content-inner:hover .hero-accent-bar {
+  height: 190px;
+}
+
+.lab-hero-section .hero-meta,
+.lab-hero-section .hero-description,
+.lab-hero-section .hero-actions {
+  opacity: 0;
+  transform: translateY(-22px);
+  transition:
+    opacity .4s cubic-bezier(0.25,0.46,0.45,0.94),
+    transform .4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.lab-hero-section .content-inner:hover .hero-meta {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .1s;
+}
+
+.lab-hero-section .content-inner:hover .hero-description {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .2s;
+}
+
+.lab-hero-section .content-inner:hover .hero-actions {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .3s;
+}
+
+.lab-hero-section .hero-actions {
+  position: static;
+  transform: none;
+  margin-top: 1.3rem;
+}
+.lab-kicker {
+  display: block;
+  margin: 0;
+  line-height: 1;
+  font-family: 'Oxanium', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: #00AEDE;
+}
+}
+  </style>
+</head>
+<body>
+<header class="lss-nav-bar">
+  <div class="lss-nav-logo">LSS</div>
+  
+  <div class="hamburger" onclick="document.querySelector('.lss-nav-links').classList.toggle('active')">☰</div>
+  
+  <nav class="lss-nav-links">
+    <a href="/" class="lss-nav-item">Bridge</a>
+    <a href="/vault/" class="lss-nav-item">Vault</a>
+    <a href="/lab/" class="lss-nav-item">Lab</a>
+    <a href="/pulse/" class="lss-nav-item">Pulse</a>
+    <a href="/telemetry/" class="lss-nav-item">Telemetry</a>
+  </nav>
+</header>
+<div id="lss-splash">
+  <div class="lss-splash-inner">
+
+    <img
+      src="https://light-speed-studios.b-cdn.net/coverlogo%20copy11.png"
+      alt="Light Speed Studios"
+      class="lss-splash-logo"
+      loading="eager"
+      fetchpriority="high"
+      decoding="sync">
+
+    <div class="lss-splash-title">
+      LIGHT SPEED STUDIOS
+    </div>
+
+    <div class="lss-splash-divider"></div>
+
+    <div class="lss-splash-line">
+      NO SPECTACLE WITHOUT SOUL
+    </div>
+
+  </div>
+</div>
+
+<style>
+#lss-splash{
+    position:fixed;
+    inset:0;
+    z-index:999999;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    background:#040E15;
+    overflow:hidden;
+    transition:opacity .8s ease,visibility .8s ease;
+}
+
+#lss-splash.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.lss-splash-inner{
+    width:100%;
+    text-align:center;
+    margin-top:56px;
+    padding:0 20px;
+}
+
+.lss-splash-logo{
+    display:block;
+    width:min(240px,46vw);
+    height:auto;
+    margin:0 auto 22px;
+    opacity:0;
+    animation:lssSplashFadeIn 1.4s ease forwards;
+}
+
+.lss-splash-title{
+    font-family:Oxanium, Rajdhani, Arial, sans-serif;
+    font-size:clamp(58px,5.8vw,90px);
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#BAC7D5;
+    margin-bottom:18px;
+    opacity:0;
+    animation:lssSplashFadeIn 1.4s ease forwards;
+animation-delay:.8s;
+}
+
+.lss-splash-divider{
+    width:min(620px,68vw);
+    height:1px;
+    margin:0 auto 20px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(186,199,213,.18) 12%,
+        rgba(186,199,213,.72) 50%,
+        rgba(186,199,213,.18) 88%,
+        transparent
+    );
+    opacity:0;
+   animation:lssSplashFadeIn 1.4s ease forwards;
+animation-delay:1.25s;
+}
+
+.lss-splash-line{
+    font-family:Oxanium, Rajdhani, Arial, sans-serif;
+    font-size:clamp(42px,4.2vw,68px);
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(186,199,213,.72);
+    opacity:0;
+ animation:lssSplashFadeIn 1.4s ease forwards;
+animation-delay:1.6s;
+}
+
+@keyframes lssSplashFadeIn{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media (max-width:700px){
+
+    .lss-splash-inner{
+        margin-top:36px;
+    }
+
+    .lss-splash-logo{
+        width:150px;
+        margin-bottom:16px;
+    }
+
+    .lss-splash-title{
+        font-size:44px;
+        letter-spacing:.08em;
+        margin-bottom:18px;
+    }
+
+    .lss-splash-divider{
+        width:280px;
+        margin:0 auto 18px;
+    }
+
+    .lss-splash-line{
+        font-size:33px;
+        letter-spacing:.08em;
+    }
+
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const splash = document.getElementById("lss-splash");
+
+    function closeSplash() {
+        if (!splash || splash.classList.contains("hide")) return;
+
+        splash.classList.add("hide");
+
+        setTimeout(() => {
+            splash.remove();
+        }, 800);
+    }
+
+    document.addEventListener("pointerdown", closeSplash, { once: true });
+
+    setTimeout(closeSplash, 5200);
+
+});
+</script>
+  <!-- =======================================================
+       SECTION 1: HERO CAROUSEL
+  ======================================================= -->
+  <section class="home-hero-section">
+    <section class="hero-carousel" id="heroCarousel">
+
+      <article class="slide active">
+        <div class="slide-bg" style="background-image:url('https://light-speed-studios.b-cdn.net/ffshero.png');"></div>
+        <div class="hero-content">
+          <div class="content-inner hero-content-wrapper">
+            <div class="hero-accent-bar"></div>
+            <a class="hero-title-link" href="https://www.light-speed.studio/vault/far-from-sol">
+<span class="hero-kicker">FEATURED EDIT</span>
+              <h1 class="hero-title">FAR FROM SOL</h1>
+            </a>
+            <div class="hero-meta">
+              <span>2026</span>
+              <span>2h 10m</span>
+              <span>FUTURE WORLDS</span>
+            </div>
+            <p class="hero-description">
+              Into the Dying Light
+            </p>
+            <div class="hero-actions">
+               <a class="hero-button details" href="https://www.light-speed.studio/vault/far-from-sol">DETAILS</a>
+                      <a class="hero-button browse" href="https://www.light-speed.studio/vault">BROWSE</a>
+                    </div>
+          </div>
+        </div>
+</article>
+      <article class="slide">
+        <div class="slide-bg" style="background-image:url('https://light-speed-studios.b-cdn.net/SOTnewhero%20copy.jpg');"></div>
+        <div class="hero-content">
+          <div class="content-inner hero-content-wrapper">
+            <div class="hero-accent-bar"></div>
+            <a class="hero-title-link" href="https://www.light-speed.studio/vault/superman">
+<span class="hero-kicker">FEATURED EDIT</span>
+              <h1 class="hero-title">SUPERMAN: SON OF TOMORROW</h1>
+            </a>
+            <div class="hero-meta">
+              <span>2025</span>
+              <span>1h 50m</span>
+              <span>AGE OF HEROES</span>   
+            </div>
+            <p class="hero-description">
+              Tomorrow Begins with Hope
+            </p>
+            <div class="hero-actions">
+                      <a class="hero-button details" href="https://www.light-speed.studio/vault/superman">DETAILS</a>
+                      <a class="hero-button browse" href="https://www.light-speed.studio/vault">BROWSE</a>
+                    </div>
+          </div>
+        </div>
+</article>
+
+      <article class="slide">
+        <div class="slide-bg" style="background-image:url('https://light-speed-studios.b-cdn.net/glassheroes1NEW.png');"></div>
+        <div class="hero-content">
+          <div class="content-inner hero-content-wrapper">
+            <div class="hero-accent-bar"></div>
+            <a class="hero-title-link" href="https://www.light-speed.studio/vault/glass-rooms">
+<span class="hero-kicker">FEATURED EDIT</span>
+              <h1 class="hero-title">GLASS ROOMS</h1>
+            </a>
+            <div class="hero-meta">
+              <span>2026</span>
+              <span>1h 32m</span>
+              <span>FUTURE WORLDS</span>
+            </div>
+            <p class="hero-description">
+              Observation is Absolute
+            </p>
+            <div class="hero-actions">
+                      <a class="hero-button details" href="https://www.light-speed.studio/vault/glass-rooms">DETAILS</a>
+                      <a class="hero-button browse" href="https://www.light-speed.studio/vault">BROWSE</a>
+                    </div>
+          </div>
+        </div>
+</article>
+
+
+      <article class="slide">
+        <div class="slide-bg" style="background-image:url('https://light-speed-studios.b-cdn.net/batmanhero.png');"></div>
+        <div class="hero-content">
+          <div class="content-inner hero-content-wrapper">
+            <div class="hero-accent-bar"></div>
+            <a class="hero-title-link" href="https://www.light-speed.studio/vault/batman">
+<span class="hero-kicker">FEATURED EDIT</span>
+              <h1 class="hero-title">BATMAN: GOTHAM'S RIDDLE</h1>
+            </a>
+            <div class="hero-meta">
+              <span>2024</span>
+              <span>1h 59m</span>
+              <span>AGE OF HEROES</span>
+            </div>
+            <p class="hero-description">
+              Riddle Me This
+            </p>
+            <div class="hero-actions">
+                      <a class="hero-button details" href="https://www.light-speed.studio/vault/batman">DETAILS</a>
+                      <a class="hero-button browse" href="https://www.light-speed.studio/vault">BROWSE</a>
+                    </div>
+          </div>
+        </div>
+</article>
+
+      <article class="slide">
+        <div class="slide-bg" style="background-image:url('https://light-speed-studios.b-cdn.net/rogueonehero1.png');"></div>
+        <div class="hero-content">
+          <div class="content-inner hero-content-wrapper">
+            <div class="hero-accent-bar"></div>
+            <a class="hero-title-link" href="https://www.light-speed.studio/vault/rogue-one">
+<span class="hero-kicker">FEATURED EDIT</span>
+              <h1 class="hero-title">ROGUE ONE: THE SCARIF RUN</h1>
+            </a>
+            <div class="hero-meta">
+              <span>2026</span>
+              <span>1h 47m</span>
+              <span>FUTURE WORLDS</span>
+            </div>
+            <p class="hero-description">
+              When Chances Fade, Only Choice Remains
+            </p>
+            <div class="hero-actions">
+                      <a class="hero-button details" href="https://www.light-speed.studio/vault/rogue-one">DETAILS</a>
+                      <a class="hero-button browse" href="https://www.light-speed.studio/vault">BROWSE</a>
+                    </div>
+          </div>
+        </div>
+</article>
+   <article class="slide">
+        <div class="slide-bg" style="background-image:url('https://light-speed-studios.b-cdn.net/flashhero.png');"></div>
+        <div class="hero-content">
+          <div class="content-inner hero-content-wrapper">
+            <div class="hero-accent-bar"></div>
+            <a class="hero-title-link" href="https://www.light-speed.studio/vault/the-flash">
+<span class="hero-kicker">FEATURED EDIT</span>
+              <h1 class="hero-title">THE FLASH: CROSSROADS</h1>
+            </a>
+            <div class="hero-meta">
+              <span>2023</span>
+              <span>1h 57m</span>
+              <span>AGE OF HEROES</span>
+            </div>
+            <p class="hero-description">
+              Out of Time
+            </p>
+            <div class="hero-actions">
+                      <a class="hero-button details" href="https://www.light-speed.studio/vault/the-flash">DETAILS</a>
+                      <a class="hero-button browse" href="https://www.light-speed.studio/vault">BROWSE</a>
+                    </div>
+          </div>
+        </div>
+</article>
+
+      <article class="slide">
+        <div class="slide-bg" style="background-image:url('https://light-speed-studios.b-cdn.net/realsteelheroNEW.png');"></div>
+        <div class="hero-content">
+          <div class="content-inner hero-content-wrapper">
+            <div class="hero-accent-bar"></div>
+            <a class="hero-title-link" href="https://www.light-speed.studio/vault/real-steel">
+<span class="hero-kicker">FEATURED EDIT</span>
+              <h1 class="hero-title">REAL STEEL: THE LAST ROUND</h1>
+            </a>
+            <div class="hero-meta">
+              <span>2026</span>
+              <span>1h 47m</span>
+              <span>METALLIC MAYHEM</span>
+            </div>
+            <p class="hero-description">
+              Fight for Redemption
+            </p>
+            <div class="hero-actions">
+                      <a class="hero-button details" href="https://www.light-speed.studio/vault/real-steel">DETAILS</a>
+                      <a class="hero-button browse" href="https://www.light-speed.studio/vault">BROWSE</a>
+                    </div>
+          </div>
+        </div>
+</article>
+      <button class="nav-arrow left" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+          <path d="M15 18L9 12L15 6" stroke="#7beaff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="nav-arrow right" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" width="36" height="36">
+          <path d="M9 6L15 12L9 18" stroke="#7beaff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="indicators" aria-label="Slide indicators">
+        <button class="indicator active"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+        <button class="indicator"></button>
+      </div>
+    </section>
+
+    <section class="mobile-hero-carousel" id="mobileHeroCarousel" aria-label="Mobile hero carousel">
+      <div class="mobile-hero-track">
+ <article class="mobile-slide active">
+          <a href="https://www.light-speed.studio/vault/far-from-sol">
+            <img src="https://light-speed-studios.b-cdn.net/SOLMOBNEWPROD1.png" alt="SOL" />
+          </a>
+</article>
+        <article class="mobile-slide">
+          <a href="https://www.light-speed.studio/vault/superman">
+            <img src="https://light-speed-studios.b-cdn.net/supesheromob1.png" alt="Mobile SUPERMAN" />
+          </a>
+        </article>
+        <article class="mobile-slide">
+          <a href="https://www.light-speed.studio/vault/glass-rooms">
+            <img src="https://light-speed-studios.b-cdn.net/grMOBNEW1.png" alt="Mobile glass rooms" />
+          </a>
+        </article>
+
+        <article class="mobile-slide">
+          <a href="https://www.light-speed.studio/vault/batman">
+            <img src="https://light-speed-studios.b-cdn.net/grNEWMOB1.png" alt="Mobile Batman" />
+          </a>
+        </article>
+
+        <article class="mobile-slide">
+          <a href="https://www.light-speed.studio/vault/rogue-one">
+            <img src="https://light-speed-studios.b-cdn.net/grMOBNEW1.png" alt="Mobile rogue one" />
+          </a>
+        </article>
+
+        <article class="mobile-slide">
+          <a href="https://www.light-speed.studio/vault/the-flash">
+            <img src="https://light-speed-studios.b-cdn.net/FLASHMOB111.png" alt="Mobile THE FLASH" />
+          </a>
+        </article>
+
+        <article class="mobile-slide">
+          <a href="https://www.light-speed.studio/vault/real-steel">
+            <img src="https://light-speed-studios.b-cdn.net/thelastroundmobNEW1.png" alt="Mobile real steel" />
+          </a>
+        </article>
+
+        <button class="mobile-nav-arrow left" aria-label="Previous mobile slide">
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button class="mobile-nav-arrow right" aria-label="Next mobile slide">
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path d="M9 6L15 12L9 18" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+<div class="section-heading orbit-desktop-only">
+  <span class="lead">B</span><span class="rest">RIDGE</span>
+</div>
+  <div class="bridge-body">
+    <p><strong>Every edit begins with an emotional connection. </strong>By stripping away noise, the goal is to reveal a clearer, more focused version of the story. By honoring the original vision, Light Speed Studios aims to offer fresh perspectives on films that already mean so much to their fans.
+  </div>
+    <section class="home-signup-wrap">
+  <div class="lss-embed">
+    
+    <!-- Updated Formspark Action Endpoint -->
+    <form action="https://submit-form.com/Es2Ypoxuk" method="POST" class="lss-form">
+      
+      <!-- Custom Thank You Page Redirect Directive -->
+      <input type="hidden" name="_redirect" value="http://www.light-speed.studio/email-landing-page" />
+      
+      <label for="email" class="lss-label">ALERTS</label>
+      <input id="email" name="email" type="email" placeholder="ENTER EMAIL" required class="lss-input">
+      
+      <button type="submit" class="lss-button">JOIN</button>
+    </form>
+    
+    <p class="lss-disclaimer">Twice-monthly updates on edits. No SPAM!</p>
+  </div>
+</section>
+  </section>
+
+  <!-- =======================================================
+       SECTION 2: VAULT
+  ======================================================= -->
+  <div class="section-heading">
+    <a href="https://www.light-speed.studio/vault" class="heading-link">
+      <span class="lead">V</span><span class="rest">AULT</span>
+    </a>
+  </div>
+
+  <section class="vault-combined-section" id="vaultSection">
+    <div class="vault-rail-wrapper">
+  <div class="vault-arrow vault-arrow-left" id="vaultPrev" role="button" tabindex="0" aria-label="Previous"></div>
+  <div class="vault-arrow vault-arrow-right" id="vaultNext" role="button" tabindex="0" aria-label="Next"></div>
+
+  <div class="vault-rail-dashes" id="vaultRailDashes"></div>
+
+  <div class="vault-rail-track" id="vaultTrack">
+  <a class="vault-item signature" href="https://www.light-speed.studio/vault/batman" target="_blank">
+  <img src="https://light-speed-studios.b-cdn.net/Batman%20logo.png">
+  <div class="vault-metadata-bar">
+    <span>2024</span>
+    <span>1H 57M</span>
+  </div>
+
+  <div class="vault-info">
+    <div class="vault-tagline">Riddle Me This</div>
+
+    <div class="vault-divider">
+      <span></span>
+      <span class="mark">
+        <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png" alt="LSS">
+      </span>
+      <span></span>
+    </div>
+
+    <div class="vault-runtime">RUNTIME • 1H 57M</div>
+  </div>
+</a>
+  <a class="vault-item signature" href="https://www.light-speed.studio/vault/far-from-sol" target="_blank">
+  <img src="https://light-speed-studios.b-cdn.net/FFS%20rail.png">
+  <div class="vault-metadata-bar">
+    <span>2026</span>
+    <span>2H 10M</span>
+  </div>
+
+  <div class="vault-info">
+    <div class="vault-tagline">Into the Dying Light</div>
+
+    <div class="vault-divider">
+      <span></span>
+      <span class="mark">
+        <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png" alt="LSS">
+      </span>
+      <span></span>
+    </div>
+
+    <div class="vault-runtime">RUNTIME • 2H 10M</div>
+  </div>
+</a>
+  <a class="vault-item signature" href="https://www.light-speed.studio/vault/superman" target="_blank">
+    <img src="https://light-speed-studios.b-cdn.net/sot%20logo1.png">
+  <div class="vault-metadata-bar">
+    <span>2025</span>
+    <span>1H 50M</span>
+  </div>
+    <div class="vault-info">
+  <div class="vault-tagline">Tomorrow Begins with Hope</div>
+
+  <div class="vault-divider">
+    <span></span>
+    <span class="mark">
+      <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png">
+    </span>
+    <span></span>
+  </div>
+
+  <div class="vault-runtime">RUNTIME • 1H 50M</div>
+</div>
+  </a>
+
+  <a class="vault-item signature" href="https://www.light-speed.studio/vault/crisis" target="_blank">
+    <img src="https://light-speed-studios.b-cdn.net/Crisis%20logo.png">
+  <div class="vault-metadata-bar">
+    <span>2026</span>
+    <span>2H 04M</span>
+  </div>
+ <div class="vault-info">
+  <div class="vault-tagline">Two Worlds, One Stand</div>
+
+  <div class="vault-divider">
+    <span></span>
+    <span class="mark">
+      <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png">
+    </span>
+    <span></span>
+  </div>
+
+  <div class="vault-runtime">RUNTIME • 2H 04M</div>
+</div>
+  </a>
+
+  <a class="vault-item precision" href="https://www.light-speed.studio/vault/glass-rooms" target="_blank">
+    <img src="https://light-speed-studios.b-cdn.net/GlassRooms%20logo111.png">
+  <div class="vault-metadata-bar">
+    <span>2026</span>
+    <span>1H 32M</span>
+  </div>
+  <div class="vault-info">
+  <div class="vault-tagline">Observation is Absolute</div>
+
+  <div class="vault-divider">
+    <span></span>
+    <span class="mark">
+      <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png">
+    </span>
+    <span></span>
+  </div>
+
+  <div class="vault-runtime">RUNTIME • 1H 32M</div>
+</div>
+  </a>
+
+  <a class="vault-item precision" href="https://www.light-speed.studio/vault/rogue-one" target="_blank">
+    <img src="https://light-speed-studios.b-cdn.net/ROGUE%20logo1112.png">
+  <div class="vault-metadata-bar">
+    <span>2026</span>
+    <span>1H 47M</span>
+  </div>
+  <div class="vault-info">
+  <div class="vault-tagline">When Chances Fade, <br> Only Choice Remains</div>
+
+  <div class="vault-divider">
+    <span></span>
+    <span class="mark">
+      <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png">
+    </span>
+    <span></span>
+  </div>
+
+  <div class="vault-runtime">RUNTIME • 1H 47M</div>
+</div>
+  </a>
+
+  <a class="vault-item precision" href="https://www.light-speed.studio/vault/real-steel" target="_blank">
+    <img src="https://light-speed-studios.b-cdn.net/rs%20LOGO.png">
+  <div class="vault-metadata-bar">
+    <span>2026</span>
+    <span>1H 47M</span>
+  </div>
+  <div class="vault-info">
+  <div class="vault-tagline">Fight for Redemption</div>
+
+  <div class="vault-divider">
+    <span></span>
+    <span class="mark">
+      <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png">
+    </span>
+    <span></span>
+  </div>
+
+  <div class="vault-runtime">RUNTIME • 1H 47M</div>
+</div>
+  </a>
+
+  <a class="vault-item precision" href="https://www.light-speed.studio/vault/speed-racer" target="_blank">
+    <img src="https://light-speed-studios.b-cdn.net/sr%20logo.png">
+  <div class="vault-metadata-bar">
+    <span>2026</span>
+    <span>1H 37M</span>
+  </div>
+  <div class="vault-info">
+  <div class="vault-tagline">Built for Speed</div>
+
+  <div class="vault-divider">
+    <span></span>
+    <span class="mark">
+      <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png">
+    </span>
+    <span></span>
+  </div>
+
+  <div class="vault-runtime">RUNTIME • 1H 37M</div>
+</div>
+  </a>
+
+  <a class="vault-item signature" href="https://www.light-speed.studio/vault/the-flash" target="_blank">
+    <img src="https://light-speed-studios.b-cdn.net/flash%20logo1.png">
+  <div class="vault-metadata-bar">
+    <span>2023</span>
+    <span>1H 58M</span>
+  </div>
+ <div class="vault-info">
+  <div class="vault-tagline">Out of Time</div>
+
+  <div class="vault-divider">
+    <span></span>
+    <span class="mark">
+      <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png">
+    </span>
+    <span></span>
+  </div>
+
+  <div class="vault-runtime">RUNTIME • 1H 58M</div>
+</div>
+  </a>
+
+  <a class="vault-item precision" href="https://www.light-speed.studio/vault/star-trek" target="_blank">
+    <img src="https://light-speed-studios.b-cdn.net/gen%20logo1.png">
+  <div class="vault-metadata-bar">
+    <span>2024</span>
+    <span>1H 52M</span>
+  </div>
+ <div class="vault-info">
+  <div class="vault-tagline">The Future Begins Again</div>
+
+  <div class="vault-divider">
+    <span></span>
+    <span class="mark">
+      <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png">
+    </span>
+    <span></span>
+  </div>
+
+  <div class="vault-runtime">RUNTIME • 1H 52M</div>
+</div>
+  </a>
+
+  <a class="vault-item precision" href="https://www.light-speed.studio/vault/top-gun" target="_blank">
+    <img src="https://light-speed-studios.b-cdn.net/tga%20logo.png">
+  <div class="vault-metadata-bar">
+    <span>2025</span>
+    <span>1H 43M</span>
+  </div>
+    <div class="vault-info">
+  <div class="vault-tagline">Trust Your Wing</div>
+
+  <div class="vault-divider">
+    <span></span>
+    <span class="mark">
+      <img src="https://light-speed-studios.b-cdn.net/favinew%20low%20copy.png">
+    </span>
+    <span></span>
+  </div>
+
+  <div class="vault-runtime">RUNTIME • 1H 43M</div>
+</div>
+  </a>
+
+</div>
+    </div>
+
+    <div class="carousel-wrapper">
+      <div class="container">
+        <div class="cards-wrapper" id="vaultStage">
+
+          <div class="swipe-hint left">
+            <svg viewBox="0 0 24 24"><path d="M14.5 5l-7 7 7 7"/></svg>
+          </div>
+          <div class="swipe-hint right">
+            <svg viewBox="0 0 24 24"><path d="M9.5 5l7 7-7 7"/></svg>
+          </div>
+
+          <ul class="cards__container" id="mobile-list">
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/far-from-sol">
+                <img src="https://light-speed-studios.b-cdn.net/Solvaulmob.png" fetchpriority="high" alt="Superman logo">
+              </a>
+            </li>
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/superman">
+                <img src="https://light-speed-studios.b-cdn.net/smsot.png" fetchpriority="high" alt="Superman logo">
+              </a>
+            </li>
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/crisis">
+                <img src="https://light-speed-studios.b-cdn.net/crisis%20heromain1.png" alt="crisislogo">
+              </a>
+            </li>
+            <li class="box">
+
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/glass-rooms">
+                <img src="https://light-speed-studios.b-cdn.net/glassroomsfinal.png" alt="Glass Rooms">
+              </a>
+            </li>
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/rogue-one">
+                <img loading="lazy" src="https://light-speed-studios.b-cdn.net/rougeEWS.png" alt="Rogue One">
+              </a>
+            </li>
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/real-steel">
+                <img loading="lazy" src="https://light-speed-studios.b-cdn.net/newlrmobile.png" alt="Real Steel logo">
+              </a>
+            </li>
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/the-flash">
+                <img loading="lazy" src="https://light-speed-studios.b-cdn.net/flash-logo.jpg" alt="The Flash logo">
+              </a>
+            </li>
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/speed-racer">
+                <img loading="lazy" src="https://light-speed-studios.b-cdn.net/sracer.jpg" alt="Speed Racer logo">
+              </a>
+            </li>
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/batman">
+                <img loading="lazy" src="https://light-speed-studios.b-cdn.net/Batman-logo.jpg" alt="Batman logo">
+              </a>
+            </li>
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/star-trek">
+                <img loading="lazy" src="https://light-speed-studios.b-cdn.net/star-trek-logo.jpg" alt="Star Trek logo">
+              </a>
+            </li>
+            <li class="box">
+              <a class="hoverfx" href="https://www.light-speed.studio/vault/top-gun">
+                <img loading="lazy" src="https://light-speed-studios.b-cdn.net/TOP-GUN-LOGO.jpg" alt="Top Gun logo">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="dots-row">
+          <span class="nav-btn" id="navPrev">&lt;</span>
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <span class="nav-btn" id="navNext">&gt;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================
+       SECTION 3: F1 HERO
+  ======================================================= -->
+  <div class="section-heading">
+    <a href="https://www.light-speed.studio/lab" class="heading-link">
+      <span class="lead">L</span><span class="rest">AB</span>
+    </a>
+  </div>
+
+  <section class="lab-hero-section">
+    <section class="hero-single">
+      <div class="hero-single-frame"></div>
+      <div class="hero-bg" style="background-image:url('https://light-speed-studios.b-cdn.net/THEFLASHTCVSHOWPROD.png');"></div>
+<div class="hero-content">
+  <div class="content-inner hero-content-wrapper">
+    <div class="hero-accent-bar"></div>
+<span class="lab-kicker">PRE-PRODUCTION</span>
+<h1 class="hero-title">THE FLASH: SPEED TRAP</h1>
+          <div class="hero-meta">
+            <span>MID AUG 2026</span>
+            <span>AGE OF HEROES</span>
+          </div>
+
+          <p class="hero-description">
+            Believe the Impossible
+          </p>
+<div class="hero-actions">
+  <a class="hero-button details" href="https://www.light-speed.studio/lab/speed-trap">DETAILS</a>
+</div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="hero-button" href="https://www.light-speed.studio/lab/far-from-sol">explore</a>
+        <a class="hero-button" href="https://www.light-speed.studio/lab">lab</a>
+      </div>
+    </section>
+
+    <section class="mobile-hero-single">
+      <a href="https://www.light-speed.studio/lab/speed-trap">
+        <img src="https://light-speed-studios.b-cdn.net/THE%20FLASHSHOWPROD11.png" alt="Mobile" />
+      </a>
+    </section>
+  </section>
+<div class="section-heading orbit-desktop-only">
+  <span class="lead">O</span><span class="rest">RBIT</span>
+</div>
+  <div class="lss-image-block orbit-image-frame">
+  <img src="https://light-speed-studios.b-cdn.net/Slate%20updated.png" alt="Light Speed Studios Upcoming Slate">
+</div>
+  <div class="bridge-body">
+<p><strong>DISCLAIMER</strong> Light Speed Studios respects intellectual property rights and does not support piracy. These edits are transformative works created for entertainment purposes and are strictly non-profit. Ownership of a legal copy of the original film is required prior to viewing any edit.
+  </div>
+  <div class="footer-logo-block">
+    <img src="https://light-speed-studios.b-cdn.net/FOOTER1222.png" alt="Light Speed Studios Logo">
+  </div>
+
+  <script>
+    (function () {
+      const carousel = document.getElementById('heroCarousel');
+      if (!carousel) return;
+
+      const slides = carousel.querySelectorAll('.slide');
+      const indicators = carousel.querySelectorAll('.indicator');
+      const prevBtn = carousel.querySelector('.nav-arrow.left');
+      const nextBtn = carousel.querySelector('.nav-arrow.right');
+
+      let current = 0;
+      let autoPlay = null;
+      const autoDelay = 6900;
+
+      function showSlide(index) {
+        current = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === current);
+        });
+
+        indicators.forEach((dot, i) => {
+          dot.classList.toggle('active', i === current);
+        });
+      }
+
+      function nextSlide() {
+        showSlide(current + 1);
+      }
+
+      function prevSlide() {
+        showSlide(current - 1);
+      }
+
+      function startAutoPlay() {
+        stopAutoPlay();
+        autoPlay = setInterval(nextSlide, autoDelay);
+      }
+
+      function stopAutoPlay() {
+        if (autoPlay) {
+          clearInterval(autoPlay);
+          autoPlay = null;
+        }
+      }
+
+      prevBtn.addEventListener('click', function () {
+        prevSlide();
+        startAutoPlay();
+      });
+
+      nextBtn.addEventListener('click', function () {
+        nextSlide();
+        startAutoPlay();
+      });
+
+      indicators.forEach((dot, index) => {
+        dot.addEventListener('click', function () {
+          showSlide(index);
+          startAutoPlay();
+        });
+      });
+document.querySelectorAll('.home-hero-section .hero-content-wrapper').forEach(wrapper => {
+  wrapper.addEventListener('mouseenter', stopAutoPlay);
+  wrapper.addEventListener('mouseleave', startAutoPlay);
+});
+
+    showSlide(0);
+
+setTimeout(() => {
+    startAutoPlay();
+}, 5000);
+    })();
+
+    (function () {
+      const mobileCarousel = document.getElementById('mobileHeroCarousel');
+      if (!mobileCarousel) return;
+
+      const mobileSlides = mobileCarousel.querySelectorAll('.mobile-slide');
+      const mobilePrevBtn = mobileCarousel.querySelector('.mobile-nav-arrow.left');
+      const mobileNextBtn = mobileCarousel.querySelector('.mobile-nav-arrow.right');
+
+      let mobileCurrent = 0;
+      let mobileAutoPlay = null;
+      const mobileAutoDelay = 6000;
+
+      function showMobileSlide(index) {
+        mobileCurrent = (index + mobileSlides.length) % mobileSlides.length;
+
+        mobileSlides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === mobileCurrent);
+        });
+      }
+
+      function nextMobileSlide() {
+        showMobileSlide(mobileCurrent + 1);
+      }
+
+      function prevMobileSlide() {
+        showMobileSlide(mobileCurrent - 1);
+      }
+
+      function startMobileAutoPlay() {
+        stopMobileAutoPlay();
+        mobileAutoPlay = setInterval(nextMobileSlide, mobileAutoDelay);
+      }
+
+      function stopMobileAutoPlay() {
+        if (mobileAutoPlay) {
+          clearInterval(mobileAutoPlay);
+          mobileAutoPlay = null;
+        }
+      }
+
+      mobilePrevBtn.addEventListener('click', function () {
+        prevMobileSlide();
+        startMobileAutoPlay();
+      });
+
+      mobileNextBtn.addEventListener('click', function () {
+        nextMobileSlide();
+        startMobileAutoPlay();
+      });
+
+      mobileCarousel.addEventListener('mouseenter', stopMobileAutoPlay);
+      mobileCarousel.addEventListener('mouseleave', startMobileAutoPlay);
+
+      showMobileSlide(0);
+      startMobileAutoPlay();
+    })();
+
+    window.addEventListener("load", function () {
+      const track = document.getElementById("vaultTrack");
+      const prev = document.getElementById("vaultPrev");
+      const next = document.getElementById("vaultNext");
+const dashes = document.getElementById("vaultRailDashes");
+const postersPerJump = 4;
+let currentVaultPage = 0;
+function setupVaultDashes() {
+const totalPosterCount = track.querySelectorAll(".vault-item").length;
+const realPosterCount = track.dataset.realPosterCount
+  ? Number(track.dataset.realPosterCount)
+  : totalPosterCount;
+const pageCount = Math.ceil(realPosterCount / postersPerJump);
+  dashes.innerHTML = "";
+
+  for (let i = 0; i < pageCount; i++) {
+    const dash = document.createElement("button");
+    dash.className = "vault-rail-dash";
+    dash.setAttribute("aria-label", `Go to vault page ${i + 1}`);
+
+    dash.addEventListener("click", () => {
+      currentVaultPage = i;
+      scrollToVaultPage(currentVaultPage);
+    });
+
+    dashes.appendChild(dash);
+  }
+
+  updateVaultDashes();
+}
+
+function updateVaultDashes() {
+  const allDashes = dashes.querySelectorAll(".vault-rail-dash");
+
+  allDashes.forEach((dash, index) => {
+    dash.classList.toggle("active", index === currentVaultPage);
+  });
+}
+
+function getVaultStep() {
+  const item = track.querySelector(".vault-item");
+  if (!item) return 0;
+
+  const gap = parseFloat(getComputedStyle(item).marginRight) || 0;
+  return item.getBoundingClientRect().width + gap;
+}
+
+function scrollToVaultPage(page) {
+ const realPosterCount = track.querySelectorAll(".vault-item").length / 2;
+const pageCount = Math.ceil(realPosterCount / postersPerJump);
+
+currentVaultPage = ((page % pageCount) + pageCount) % pageCount;
+
+  const maxScroll = track.scrollWidth - track.clientWidth;
+  const target = Math.min(currentVaultPage * postersPerJump * getVaultStep(), maxScroll);
+
+  track.scrollTo({
+    left: target,
+    behavior: "smooth"
+  });
+
+  updateVaultDashes();
+}
+if (!track || !prev || !next || !dashes) return;
+setupVaultDashes();
+const railWrapper = track.closest('.vault-rail-wrapper');
+
+let fadesActivated = false;
+
+function updateVaultFades() {
+  if (!fadesActivated) return;
+
+  const maxScroll = track.scrollWidth - track.clientWidth;
+  const currentScroll = track.scrollLeft;
+
+  railWrapper.classList.toggle('show-left-fade', currentScroll > 5);
+  railWrapper.classList.toggle('show-right-fade', currentScroll < maxScroll - 5);
+}
+
+function activateFades() {
+  if (fadesActivated) return;
+  fadesActivated = true;
+  updateVaultFades();
+}
+
+next.addEventListener('click', activateFades);
+prev.addEventListener('click', activateFades);
+track.addEventListener('scroll', activateFades);
+
+track.addEventListener('scroll', updateVaultFades);
+window.addEventListener('resize', updateVaultFades);
+const originals = Array.from(track.children);
+track.dataset.realPosterCount = originals.length;
+originals.forEach(el => track.appendChild(el.cloneNode(true)));
+      track.scrollLeft = 1;
+
+      function halfWidth() {
+        return track.scrollWidth / 2;
+      }
+
+      function normalizeScroll() {
+        const half = halfWidth();
+        if (half <= 0) return;
+
+        if (track.scrollLeft >= half) track.scrollLeft -= half;
+        if (track.scrollLeft < 0) track.scrollLeft += half;
+      }
+
+      function getPosterStep() {
+        const item = track.querySelector(".vault-item");
+        if (!item) return 0;
+
+        const styles = getComputedStyle(item);
+        const gap = parseFloat(styles.marginRight) || 0;
+        return item.getBoundingClientRect().width + gap;
+      }
+
+      function smoothJump(dir) {
+        const step = getPosterStep();
+        if (!step) return;
+
+        const start = track.scrollLeft;
+        const target = start + dir * step * 4;
+        const duration = 320;
+        const startTime = performance.now();
+
+        function animate(now) {
+          const t = Math.min(1, (now - startTime) / duration);
+          const eased = 1 - Math.pow(1 - t, 3);
+
+          track.scrollLeft = start + (target - start) * eased;
+          normalizeScroll();
+
+          if (t < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            track.scrollLeft = target;
+            normalizeScroll();
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+next.addEventListener("click", () => {
+  currentVaultPage++;
+  scrollToVaultPage(currentVaultPage);
+});
+
+prev.addEventListener("click", () => {
+  currentVaultPage--;
+  scrollToVaultPage(currentVaultPage);
+});
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const vaultSection = document.getElementById("vaultSection");
+      const stage = document.getElementById("vaultStage");
+      const dots = vaultSection.querySelectorAll(".dot");
+      const navPrev = document.getElementById("navPrev");
+      const navNext = document.getElementById("navNext");
+      const swipeLeft = vaultSection.querySelector(".swipe-hint.left");
+      const swipeRight = vaultSection.querySelector(".swipe-hint.right");
+      const mobileList = vaultSection.querySelector("#mobile-list");
+
+      let currentIndex = 3;
+      let startX = null;
+
+      function applyMode() {
+        const mobile = window.innerWidth <= 900 || window.matchMedia("(pointer:coarse)").matches;
+        vaultSection.classList.toggle("mobile-mode", mobile);
+      }
+
+      function updateDots(i) {
+        dots.forEach((d, idx) => d.classList.toggle("active", idx === i));
+      }
+
+      function setActiveByLayout() {
+        const boxes = mobileList.querySelectorAll(".box");
+        boxes.forEach(b => b.classList.remove("active"));
+
+        if (vaultSection.classList.contains("mobile-mode")) {
+          if (boxes[0]) boxes[0].classList.add("active");
+        } else {
+          if (boxes[3]) boxes[3].classList.add("active");
+        }
+      }
+
+      function shiftLeft() {
+        if (vaultSection.classList.contains("mobile-mode")) {
+          nextMobile();
+          return;
+        }
+
+        const boxes = mobileList.querySelectorAll(".box");
+        const first = boxes[0];
+
+        setTimeout(() => {
+          first.remove();
+          mobileList.appendChild(first);
+          setActiveByLayout();
+        }, 400);
+
+        currentIndex = (currentIndex + 1) % dots.length;
+        updateDots(currentIndex);
+      }
+
+      function shiftRight() {
+        if (vaultSection.classList.contains("mobile-mode")) {
+          prevMobile();
+          return;
+        }
+
+        const boxes = mobileList.querySelectorAll(".box");
+        const last = boxes[boxes.length - 1];
+
+        setTimeout(() => {
+          last.remove();
+          mobileList.insertBefore(last, mobileList.firstChild);
+          setActiveByLayout();
+        }, 400);
+
+        currentIndex = (currentIndex - 1 + dots.length) % dots.length;
+        updateDots(currentIndex);
+      }
+
+      function nextMobile() {
+        const first = mobileList.querySelector(".box:first-child");
+        if (!first) return;
+
+        mobileList.appendChild(first);
+        setActiveByLayout();
+      }
+
+      function prevMobile() {
+        const last = mobileList.querySelector(".box:last-child");
+        if (!last) return;
+
+        mobileList.insertBefore(last, mobileList.firstChild);
+        setActiveByLayout();
+      }
+
+      navPrev.onclick = () => vaultSection.classList.contains("mobile-mode") ? prevMobile() : shiftRight();
+      navNext.onclick = () => vaultSection.classList.contains("mobile-mode") ? nextMobile() : shiftLeft();
+
+      swipeLeft.onclick = () => prevMobile();
+      swipeRight.onclick = () => nextMobile();
+
+      stage.addEventListener("touchstart", e => {
+        startX = e.changedTouches[0].clientX;
+      }, { passive: true });
+
+      stage.addEventListener("touchend", e => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+
+        if (Math.abs(dx) > 30) {
+          if (vaultSection.classList.contains("mobile-mode")) {
+            dx < 0 ? nextMobile() : prevMobile();
+          } else {
+            dx < 0 ? shiftLeft() : shiftRight();
+          }
+        }
+        startX = null;
+      }, { passive: true });
+
+      dots.forEach((dot, targetIndex) => {
+        dot.addEventListener("click", () => {
+          const total = dots.length;
+          if (targetIndex === currentIndex) return;
+
+          let diff = (targetIndex - currentIndex + total) % total;
+          const goLeft = diff <= total / 2;
+          const steps = goLeft ? diff : total - diff;
+          let k = 0;
+
+          const go = () => {
+            if (k >= steps) return;
+            goLeft ? shiftLeft() : shiftRight();
+            k++;
+            setTimeout(go, 420);
+          };
+          go();
+        });
+      });
+
+      window.addEventListener("resize", applyMode);
+
+      applyMode();
+      setActiveByLayout();
+      updateDots(currentIndex);
+    });
+  </script>
+</body>
+</html>
